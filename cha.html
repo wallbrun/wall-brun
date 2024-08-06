@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Chá de Cozinha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        .item label {
+            margin-left: 8px;
+        }
+        .item input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        .selected {
+            text-decoration: line-through;
+            color: #999;
+        }
+    </style>
+    <script>
+        function updateCheckboxes() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                if (localStorage.getItem(checkbox.id) === 'true') {
+                    checkbox.checked = true;
+                    checkbox.parentElement.classList.add('selected');
+                }
+            });
+        }
+
+        function handleCheckboxChange(event) {
+            var checkbox = event.target;
+            if (checkbox.checked) {
+                localStorage.setItem(checkbox.id, 'true');
+                checkbox.parentElement.classList.add('selected');
+            } else {
+                localStorage.setItem(checkbox.id, 'false');
+                checkbox.parentElement.classList.remove('selected');
+            }
+        }
+
+        window.onload = function() {
+            updateCheckboxes();
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', handleCheckboxChange);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Chá de Cozinha</h1>
+        <form id="itemForm">
+            <!-- Adicionando todos os itens -->
+            <div class="item"><input type="checkbox" id="item7"><label for="item7">Aspirador de pó</label></div>
+            <div class="item"><input type="checkbox" id="item8"><label for="item8">Batedeira</label></div>
+            <div class="item"><input type="checkbox" id="item9"><label for="item9">Torradeira</label></div>
+            <div class="item"><input type="checkbox" id="item10"><label for="item10">Liquidificador</label></div>
+            <div class="item"><input type="checkbox" id="item11"><label for="item11">Sanduicheira</label></div>
+            <div class="item"><input type="checkbox" id="item12"><label for="item12">Ferro de passar roupas (sem preferência de cor)</label></div>
+            <div class="item"><input type="checkbox" id="item13"><label for="item13">Churrasqueira elétrica (pequena)</label></div>
+            <div class="item"><input type="checkbox" id="item14"><label for="item14">Cafeteira</label></div>
+            <div class="item"><input type="checkbox" id="item15"><label for="item15">Panela de pressão</label></div>
+            <div class="item"><input type="checkbox" id="item16"><label for="item16">Forma de pudim</label></div>
+            <div class="item"><input type="checkbox" id="item17"><label for="item17">Jogo de assadeiras retangulares</label></div>
+            <div class="item"><input type="checkbox" id="item18"><label for="item18">Jogo de assadeiras redondas</label></div>
+            <div class="item"><input type="checkbox" id="item19"><label for="item19">Marinex retangular grande</label></div>
+            <div class="item"><input type="checkbox" id="item20"><label for="item20">Marinex retangular pequena</label></div>
+            <div class="item"><input type="checkbox" id="item21"><label for="item21">Garrafa térmica (preta, branca ou cinza)</label></div>
+            <div class="item"><input type="checkbox" id="item22"><label for="item22">Jogo de talheres</label></div>
+            <div class="item"><input type="checkbox" id="item23"><label for="item23">Conjunto de facas</label></div>
+            <div class="item"><input type="checkbox" id="item24"><label for="item24">Jogo de copos</label></div>
+            <div class="item"><input type="checkbox" id="item25"><label for="item25">Aparelho de jantar</label></div>
+            <div class="item"><input type="checkbox" id="item26"><label for="item26">Jogo de taças de gin</label></div>
+            <div class="item"><input type="checkbox" id="item27"><label for="item27">Jogo de taças de vinho</label></div>
+            <div class="item"><input type="checkbox" id="item28"><label for="item28">Jogo de canecas</label></div>
+            <div class="item"><input type="checkbox" id="item29"><label for="item29">Jogo de tigelas de sobremesa</label></div>
+            <div class="item"><input type="checkbox" id="item30"><label for="item30">Jogo de taças de sobremesa</label></div>
+            <div class="item"><input type="checkbox" id="item31"><label for="item31">Taça americana acrílico sem tampa</label></div>
+            <div class="item"><input type="checkbox" id="item32"><label for="item32">Kit de caipirinha</label></div>
+            <div class="item"><input type="checkbox" id="item33"><label for="item33">Conjunto de potes plásticos para alimentos</label></div>
+            <div class="item"><input type="checkbox" id="item34"><label for="item34">Saca rolhas abridor de vinho</label></div>
+            <div class="item"><input type="checkbox" id="item35"><label for="item35">Boleira com tampa</label></div>
+            <div class="item"><input type="checkbox" id="item36"><label for="item36">Bombomniere de vidro</label></div>
+            <div class="item"><input type="checkbox" id="item37"><label for="item37">Petisqueira redonda de bamboo</label></div>
+            <div class="item"><input type="checkbox" id="item38"><label for="item38">Balde de gelo acrílico</label></div>
+            <div class="item"><input type="checkbox" id="item39"><label for="item39">Kit churrasco</label></div>
+            <div class="item"><input type="checkbox" id="item40"><label for="item40">Cesta de pães</label></div>
+            <div class="item"><input type="checkbox" id="item41"><label for="item41">Porta pães</label></div>
+            <div class="item"><input type="checkbox" id="item42"><label for="item42">Bandeja dobrável para café</label></div>
+            <div class="item"><input type="checkbox" id="item43"><label for="item43">Toalha de mesa quadrada</label></div>
+            <div class="item"><input type="checkbox" id="item44"><label for="item44">Jogo de tapetes cozinha</label></div>
+            <div class="item"><input type="checkbox" id="item45"><label for="item45">Tapete capacho</label></div>
+            <div class="item"><input type="checkbox" id="item46"><label for="item46">Tapete para banheiro</label></div>
+            <div class="item"><input type="checkbox" id="item47"><label for="item47">Jarra de suco</label></div>
+            <div class="item"><input type="checkbox" id="item48"><label for="item48">Porta frios</label></div>
+            <div class="item"><input type="checkbox" id="item49"><label for="item49">Xícaras de café</label></div>
+            <div class="item"><input type="checkbox" id="item50"><label for="item50">Kit lavabo</label></div>
+            <div class="item"><input type="checkbox" id="item51"><label for="item51">Lixeira para banheiro</label></div>
+            <div class="item"><input type="checkbox" id="item52"><label for="item52">Manta para sofá</label></div>
+            <div class="item"><input type="checkbox" id="item53"><label for="item53">Jogo de almofadas</label></div>
+            <div class="item"><input type="checkbox" id="item54"><label for="item54">Almofada nó</label></div>
+            <div class="item"><input type="checkbox" id="item55"><label for="item55">Tapete sala</label></div>
+            <div class="item"><input type="checkbox" id="item56"><label for="item56">Jogo de cama casal</label></div>
+            <div class="item"><input type="checkbox" id="item57"><label for="item57">Edredom</label></div>
+            <div class="item"><input type="checkbox" id="item58"><label for="item58">Manta</label></div>
+            <div class="item"><input type="checkbox" id="item59"><label for="item59">Kit colcha cobre leito</label></div>
+            <div class="item"><input type="checkbox" id="item60"><label for="item60">Mop spray</label></div>
+            <div class="item"><input type="checkbox" id="item61"><label for="item61">Balde retrátil dobrável 10L</label></div>
+            <div class="item"><input type="checkbox" id="item62"><label for="item62">Cortador de legumes multifuncional</label></div>
+            <div class="item"><input type="checkbox" id="item63"><label for="item63">Formas de gelo silicone</label></div>
+            <div class="item"><input type="checkbox" id="item64"><label for="item64">Jogo americano redondo</label></div>
+            <div class="item"><input type="checkbox" id="item65"><label for="item65">Jogo americano quadrado</label></div>
+        </form>
+    </div>
+</body>
+</html>
